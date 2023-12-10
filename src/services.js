@@ -6,7 +6,7 @@ console.log("🚀 ~ file: services.js:5 ~ baseURL:", baseURL);
 // create an instance of axios
 const instance = axios.create({
     baseURL,
-    timeout: 1000,
+    timeout: 60 * 1000,
 });
 
 // response interceptor
