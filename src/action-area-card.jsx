@@ -13,7 +13,11 @@ export default function ActionAreaCard({ prefix, desc, img, onClick }) {
           <CardMedia component="img" height="290" image={img} alt={desc} />
         )}
         <CardContent>
-          <Typography variant="body2" fontSize={'1.5rem'} color="text.primary">
+          <Typography
+            variant="body2"
+            fontSize={'1.2rem'}
+            color="text.primary"
+          >
             {prefix}
             {desc}
           </Typography>

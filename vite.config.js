@@ -7,10 +7,13 @@ export default defineConfig({
   server: {
     cors: true,
     proxy: {
-      '/m3': {
-        target: 'http://localhost:3000',
+      '/api': {
+        target: 'http://112.74.72.93:3800',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/m3/, '')
+      },
+      '/videos': {
+        target: 'http://112.74.72.93:3800',
+        changeOrigin: true,
       }
     }
   }

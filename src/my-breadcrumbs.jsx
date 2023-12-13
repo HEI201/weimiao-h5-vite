@@ -8,28 +8,32 @@ export const MyBreadcrumbs = () => {
   const { courseId, chapterId, weekId, videoId } = useParams()
   const courseContext = useCourseContext()
   const breadcrumbs = [
-    <Link key="home" to="/courses">
-      Home
+    <Link key="home" to="/courses" underline="hover">
+      主页
     </Link>,
   ]
   if (courseId) {
     breadcrumbs.push(
-      <Link key="course" to={`/courses/${courseId}`}>
-        course: {courseContext.currentCourse?.course_name}
+      <Link key="course" to={`/courses/${courseId}`} underline="hover">
+        {courseContext.currentCourse?.course_name}
       </Link>
     )
   }
   if (weekId) {
     breadcrumbs.push(
-      <Link key="week" to={`/courses/${courseId}/${weekId}`}>
-        week: {courseContext.currentWeek?.week_title}
+      <Link key="week" to={`/courses/${courseId}/${weekId}`} underline="hover">
+        {courseContext.currentWeek?.week_title}
       </Link>
     )
   }
   if (chapterId) {
     breadcrumbs.push(
-      <Link key="chapter" to={`/courses/${courseId}/${weekId}/${chapterId}`}>
-        chapter: {courseContext.currentChapter?.chapter_name}
+      <Link
+        key="chapter"
+        to={`/courses/${courseId}/${weekId}/${chapterId}`}
+        underline="hover"
+      >
+        {courseContext.currentChapter?.chapter_name}
       </Link>
     )
   }
@@ -38,8 +42,9 @@ export const MyBreadcrumbs = () => {
       <Link
         key="video"
         to={`/courses/${courseId}/${weekId}/${chapterId}/${videoId}`}
+        underline="hover"
       >
-        video: {courseContext.currentVideo?.name}
+        {courseContext.currentVideo?.name}
       </Link>
     )
   }
@@ -47,6 +52,8 @@ export const MyBreadcrumbs = () => {
     <Breadcrumbs
       separator={<NavigateNextIcon fontSize="medium" />}
       aria-label="breadcrumb"
+      // font size
+      sx={{ fontSize: '1.2rem' }}
     >
       {breadcrumbs}
     </Breadcrumbs>

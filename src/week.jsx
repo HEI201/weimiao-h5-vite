@@ -28,8 +28,11 @@ export const Week = () => {
     <Grid container spacing={2}>
       {chapters.map((chapter, i) => {
         return (
-          <Grid item xs={4} key={i}>
-            <Link to={`/courses/${courseId}/${weekId}/${chapter.chapter_id}`}>
+          <Grid item xs={12} md={6} lg={4} key={i}>
+            <Link
+              to={`/courses/${courseId}/${weekId}/${chapter.chapter_id}`}
+              underline="hover"
+            >
               <ActionAreaCard
                 prefix={`章节${i + 1}: `}
                 desc={chapter.chapter_name}

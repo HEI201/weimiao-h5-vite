@@ -1,7 +1,7 @@
 // api services
 import axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3800';
+const baseURL ='/';
 // create an instance of axios
 const instance = axios.create({
     baseURL,

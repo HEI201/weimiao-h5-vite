@@ -29,10 +29,13 @@ export const Schedules = () => {
     <Grid container spacing={2}>
       {schedules.map((schedule, i) => {
         return (
-          <Grid item xs={4} key={i}>
-            <Link to={`/courses/${courseId}/${schedule.week_id}`}>
+          <Grid item xs={12} md={6} lg={4} key={i}>
+            <Link
+              to={`/courses/${courseId}/${schedule.week_id}`}
+              underline="hover"
+            >
               <ActionAreaCard
-                prefix={`周${i+1}: `}
+                prefix={`周${i + 1}: `}
                 desc={schedule.course_week_name}
               ></ActionAreaCard>
             </Link>

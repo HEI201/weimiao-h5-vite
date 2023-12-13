@@ -33,9 +33,10 @@ export const Chapters = () => {
     <Grid container spacing={2}>
       {videos.map((video, i) => {
         return (
-          <Grid item xs={4} key={i}>
+          <Grid item xs={12} md={6} lg={4} key={i}>
             <Link
               to={`/courses/${courseId}/${weekId}/${chapterId}/${video.v_id}`}
+              underline="hover"
             >
               <ActionAreaCard
                 prefix={`视频${i + 1}: `}
