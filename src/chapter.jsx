@@ -18,11 +18,11 @@ export const Chapters = () => {
 
     getChapters({ course_id: courseId, week_id: weekId })
       .then(({ data: { chapters, week_info } }) => {
-        const d = chapters.find(
+        const videos_data = chapters.find(
           (c) => c.chapter_id === parseInt(chapterId)
         ).videos
-        setVideos(d)
-        courseContext.setVideos(d)
+        setVideos(videos_data)
+        courseContext.setVideos(videos_data)
         courseContext.setCurrentWeek(week_info)
       })
       .catch((e) => {
